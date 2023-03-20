@@ -122,8 +122,8 @@ function closeNavbar(){
     loader.classList.remove("d-none")
     let api =  await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${currentFood}`)
     let  response =  await api.json()
-    console.log(response.meals);
-    display(response.meals)
+    console.log(response.meals.slice(0,20));
+    display(response.meals.slice(0,20))
     loader.classList.add("d-none")
 }
 
@@ -132,8 +132,8 @@ async function getApiFirstLetter(letter){
     loader.classList.remove("d-none")
     let api =  await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`)
     let  response =  await api.json()
-    console.log(response.meals);
-    display(response.meals)
+    console.log(response.meals.slice(0,20));
+    display(response.meals.slice(0,20))
     loader.classList.add("d-none")
 }
 
@@ -160,7 +160,7 @@ async function getApiDetails (id){
     let api =  await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
     let respone = await api.json()
    let arraydetails  =  respone.meals[0];
-   console.log(arraydetails );
+   console.log(arraydetails);
     displayDetails(arraydetails )
     loader.classList.add("d-none")
 }
@@ -219,8 +219,8 @@ async function getApiCategoriesMeals(meal){
     loader.classList.remove("d-none")
     let api =  await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${meal}`)
     let response =  await api.json()
-    console.log(response.meals);
-    displayCategoriesMeals(response.meals)
+    console.log(response.meals.slice(0,20));
+    displayCategoriesMeals(response.meals.slice(0,20))
     loader.classList.add("d-none")
 }
 
@@ -247,8 +247,8 @@ async function getApiArea(){
     loader.classList.remove("d-none")
     let api =  await fetch("https://www.themealdb.com/api/json/v1/1/list.php?a=list")
     let response =  await api.json()
-    console.log(response.meals);
-    displayArea(response.meals)
+    console.log(response.meals.slice(0,20));
+    displayArea(response.meals.slice(0,20))
     loader.classList.add("d-none")
     }
 
@@ -273,8 +273,8 @@ async function getApiAreaCountries(country){
     loader.classList.remove("d-none")
     let api =  await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${country}`)
     let response =  await api.json()
-    console.log(response.meals);
-    displayAreaCountries(response.meals)
+    console.log(response.meals.slice(0,20));
+    displayAreaCountries(response.meals.slice(0,20))
     loader.classList.add("d-none")
 }
 
@@ -302,8 +302,8 @@ async function getApiIngredients(){
     let api =  await fetch("https://www.themealdb.com/api/json/v1/1/list.php?i=list")
     let response =  await api.json()
     console.log(response.meals);
-    console.log(response.meals.slice(0,16));
-    displayIngredients(response.meals.slice(0,16))
+    console.log(response.meals.slice(0,20));
+    displayIngredients(response.meals.slice(0,20))
     loader.classList.add("d-none")
     }
 
@@ -328,8 +328,8 @@ async function getApiIngredients(){
         loader.classList.remove("d-none")
         let api =  await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${food}`)
         let response =  await api.json()
-        console.log(response.meals);
-        displayIngredientsFoods(response.meals)
+        console.log(response.meals.slice(0,20));
+        displayIngredientsFoods(response.meals.slice(0,20))
         loader.classList.add("d-none")
     }
     
